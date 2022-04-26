@@ -4,13 +4,12 @@ public class AnimalInfo {
 
     public static void main(String[] args) {
         Cat [] cat = new Cat[3];
-        cat[0] = new Cat ("Том", 20, false);
-        cat[1] = new Cat ("Тод", 40, false);
-        cat[2] = new Cat ("Джон", 50, false);
+        cat[0] = new Cat ("Том", 20, 150,false);
+        cat[1] = new Cat ("Тод", 40, 40,  false);
+        cat[2] = new Cat ("Джон", 50, 50, false);
         Plate plate = new Plate(100);
 
-        cat[0].Swim(10);
-        cat[0].Run(200);
+        cat[0].Run();
         // Информация о количестве еды в тарелке
         plate.info();
         // Коты едят
@@ -28,8 +27,8 @@ public class AnimalInfo {
         // Информация о количестве еды в тарелке
         plate.info();
         // Данные собаки
-        Dog dog = new Dog("Бобик");
-        dog.Swim(10);
-        dog.Run(501);
+        Dog dog = new Dog("Бобик", 400, 30);
+        dog.Swim();
+        dog.Run();
     }
 }

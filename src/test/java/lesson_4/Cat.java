@@ -4,11 +4,10 @@ public class Cat extends Animal {
     private int appetite;
     private boolean satiety;
 
-    public Cat(String name, int appetite, boolean satiety) {
-        super(name);
+    public Cat(String name, int rundistanse, int appetite, boolean satiety) {
+        super(name, rundistanse);
         this.appetite = appetite;
         this.satiety = satiety;
-
     }
 
 
@@ -20,13 +19,9 @@ public class Cat extends Animal {
         System.out.println("Данные кота: " + name + " " + appetite + " " + satiety);
     }
 
-    @Override
-    public void Swim(int swimdistanse) {
-        System.out.println("Кот не умеет плавать");
-    }
 
     @Override
-    public void Run(int rundistanse) {
+    public void Run() {
         if (rundistanse <= 200) {
             System.out.println(name + " пробежал " + rundistanse + " м.");
         } else {

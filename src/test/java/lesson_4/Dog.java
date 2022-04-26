@@ -1,12 +1,13 @@
 package lesson_4;
 
 public class Dog extends Animal {
-    public Dog(String name) {
-        super(name);
+    int swimdistanse;
+    public Dog(String name, int rundistanse, int swimdistanse) {
+        super(name, rundistanse);
+        this.swimdistanse = swimdistanse;
     }
 
-    @Override
-    public void Swim(int swimdistanse) {
+    public void Swim() {
         if (swimdistanse <= 10) {
             System.out.println(name + " проплыл " + swimdistanse + " м.");
         } else {
@@ -15,7 +16,7 @@ public class Dog extends Animal {
     }
 
     @Override
-    public void Run(int rundistanse) {
+    public void Run() {
         if (rundistanse <= 500) {
             System.out.println(name + " пробежал " + rundistanse + " м.");
         } else {

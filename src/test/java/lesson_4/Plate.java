@@ -8,13 +8,11 @@ public class Plate {
     }
 
     public boolean decreaseFood(int n) {
-        boolean result;
         if(n<food){
          food -= n;
-         return result = true;
-        }else {
-            return result = false;
+         return true;
         }
+        return false;
     }
 
     public void addingFood (int i){
