@@ -14,15 +14,16 @@ public class AuthFailTest {
     public static WebDriver driver;
 
     @BeforeClass
-    public static void setup(){
+    public static void setup() {
         System.setProperty("webdriver.chrome.driver", org.example.ConfProperties.getProperty("chromedriver"));
         driver = new ChromeDriver();
         authPage = new AuthorizationPage(driver);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(org.example.ConfProperties.getProperty("authpage"));
     }
+
     @Test
-    public void AuthorizationTest(){
+    public void AuthorizationTest() {
         authPage.inputLogin(org.example.ConfProperties.getProperty("login"));
         authPage.clickLogButton();
         Assert.assertTrue(driver.findElement(By.xpath("//*[contains(@class, 'form-message__text')]")).getText().contains("Извините, данные не сходятся. Проверьте правильность ввода."));
