@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+
 import javax.swing.*;
 import java.util.concurrent.TimeUnit;
 
@@ -19,8 +20,9 @@ public class HomePageTest {
         driver.get(ConfProperties.getProperty("homepage"));
         driver.findElement(By.xpath("//*[contains(@class, 'Button-module--button--CU-kq Button-module--sizeSM--eCtqi CookiesPolicy-module--button--JZrW1')]")).click();
     }
+
     @After
-    public  void close() {
+    public void close() {
         driver.quit();
     }
 
