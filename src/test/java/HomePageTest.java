@@ -1,3 +1,6 @@
+import io.qameta.allure.Feature;
+import io.qameta.allure.Link;
+import io.qameta.allure.Owner;
 import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +29,7 @@ public class HomePageTest {
         driver.quit();
     }
 
+    @Feature(value = "Проверка кнопок на странице Home")
     @Test
     public void HomePageSpecialistTest() {
         {
@@ -37,15 +41,14 @@ public class HomePageTest {
         }
     }
 
-
+    @Link(name = "Аndersenlab", url = "https://andersenlab.com/")
     @Test
+    @Owner(value = "Mezin")
     public void HomePageCalculate() {
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(By.xpath(homePage.calculateBlock)));
         Assert.assertTrue(driver.findElement(By.xpath(homePage.calculateBlock)).getText().contains("With numerous IT projects delivered, we can provide a detailed estimate for your IT initiative"));
         driver.findElement(By.xpath(homePage.calculateButton)).click();
         driver.getCurrentUrl().contains("https://andersenlab.com/pricing");
-//        Assert.assertTrue(driver.findElement(By.xpath(homePage.calculateButton)).getDomAttribute("href").contains(""));
-//        Assert.assertTrue(driver.findElement(By.xpath(homePage.preAtext)).getText().contains("Andersen has modernized an eLearning solution for remote education enabling end-users to create and manage interactive study materials"));
     }
 }
