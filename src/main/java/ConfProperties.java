@@ -9,7 +9,7 @@ public class ConfProperties {
 
     static {
         try {
-            fileInputStream = new FileInputStream("C:\\Users\\AndUser\\Project\\CourseProject\\src\\main\\conf.properties");
+            fileInputStream  = new FileInputStream("C:\\Users\\AndUser\\Project\\CourseProject\\src\\main\\conf.properties");
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);
         } catch (IOException e) {
